@@ -28,7 +28,7 @@ import time
 
 from datetime import datetime
 
-url = "https://yourappname.onrender.com/"  # Replace with your Render URL
+url = "https://modmail-1-lydx.onrender.com/"  # Replace with your Render URL
 interval = 30  # Interval in seconds
 
 def reload_website():
