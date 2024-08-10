@@ -23,7 +23,29 @@ from discord.ext import commands, tasks
 from discord.ext.commands.view import StringView
 from emoji import is_emoji
 from packaging.version import Version
+import requests
+import time
 
+from datetime import datetime
+
+url = "https://yourappname.onrender.com/"  # Replace with your Render URL
+interval = 30  # Interval in seconds
+
+def reload_website():
+    try:
+        response = requests.get(url)
+        print(f"Reloaded at {datetime.utcnow().isoformat()}: Status Code {response.status_code}")
+    except requests.RequestException as e:
+        print(f"Error reloading at {datetime.utcnow().isoformat()}: {e}")
+
+if __name__ == "__main__":
+    while True:
+        reload_website()
+        time.sleep(interval)
+
+
+
+setInterval(reloadWebsite, interval);
 
 try:
     # noinspection PyUnresolvedReferences
